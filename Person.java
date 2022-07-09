@@ -14,12 +14,21 @@ public abstract class Person {
    private String zip;
    private String phone;
    private String email;
+   private boolean status;
    
    public Person() {
-   
+      this.status = true;
    }
    
-   public Person(int id, String firstname, String lastname, char gender, String address, String phone, String email) {
+   public Person(int id, String firstname, String lastname, char gender, boolean status) {
+      this.id = id;
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.gender = gender;
+      this.status = status;
+   }
+   
+   public Person(int id, String firstname, String lastname, char gender, String address, String phone, String email, boolean status) {
       this.id = id;
       this.firstname = firstname;
       this.lastname = lastname;
@@ -27,11 +36,12 @@ public abstract class Person {
       this.address = address;
       this.phone = phone;
       this.email = email;
+      this.status = status;
    }
    
    @Override
    public String toString() {
-      return this.getClass().getSimpleName() + this.id + ", " + this.firstname + ", " + this.lastname + ", " + this.gender + ", " + this.address + ", " + this.phone + ", " + this.email;
+      return this.getClass().getSimpleName() + this.id + ", " + this.firstname + ", " + this.lastname + ", " + this.gender + ", " + this.status;
    }
    
    public int getId() {
@@ -62,6 +72,10 @@ public abstract class Person {
       return this.email;
    }
    
+   public boolean getStatus() {
+      return this.status;
+   }
+   
    public void setId(int id) {
       this.id = id;
    }
@@ -88,6 +102,10 @@ public abstract class Person {
    
    public void setEmail(String email) {
       this.email = email;
+   }
+   
+   public void setStatus(boolean status) {
+      this.status = status;
    }
 
 }

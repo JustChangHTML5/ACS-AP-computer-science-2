@@ -11,15 +11,19 @@ public class Teacher extends Person{
    
    }
    
-   public Teacher(int id, String firstname, String lastname, char gender, String address, String phone, String email, String position, float salary) {
+   public Teacher(int id, String firstname, String lastname, char gender, boolean status) {
+      super(id, firstname, lastname, gender, status);
+   }
+   
+   /*public Teacher(int id, String firstname, String lastname, char gender, String address, String phone, String email, String position, float salary) {
       super(id, firstname, lastname, gender, address, phone, email);
       this.position = position;
       this.salary = salary;
-   }
+   }*/
    
    @Override
    public String toString() {
-      return super.toString() + ", " + this.position + ", " + this.salary;
+      return super.toString();
    }
    
    public String getPosition() {

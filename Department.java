@@ -3,21 +3,25 @@ package model;
 public class Department {
    private int id;
    private String name;
-   private int dean;
+   private String address;
+   private String city;
+   private boolean status;
    
    public Department() {
    
    }
    
-   public Department(int id, String name, int dean) {
+   public Department(int id, String name, String address, String city, boolean status) {
       this.id = id;
       this.name = name;
-      this.dean = dean;
+      this.address = address;
+      this.city = city;
+      this.status = status;
    }
    
    @Override
    public String toString() {
-      return this.getClass().getSimpleName() + this.id + ", " + this.name + ", " + this.dean;
+      return this.getClass().getSimpleName() + this.id + ", " + this.name + ", " + this.address + ", " + this.city + ", " + this.status;
    }
    
    public int getId() {
@@ -27,10 +31,6 @@ public class Department {
    public String getName() {
       return this.name;
    }
-      
-   public int getDean() {
-      return this.dean;
-   }
    
    public void setId(int id) {
       this.id = id;
@@ -38,10 +38,6 @@ public class Department {
    
    public void setName(String name) {
       this.name = name;
-   }
-      
-   public void setDean(int dean) {
-      this.dean = dean;
    }
 
 }

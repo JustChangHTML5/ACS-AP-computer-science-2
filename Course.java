@@ -7,23 +7,33 @@ public class Course {
    private float credit;
    private float fee;
    private int instructor;
+   private boolean status;
    
    public Course() {
    
    }
    
-   public Course(int id, String name, String semester, float credit, float fee, int instructor) {
+   /*public Course(int id, String name, String semester, float credit, float fee, int instructor) {
       this.id = id;
       this.name = name;
       this.semester = semester;
       this.credit = credit;
       this.fee = fee;
       this.instructor = instructor;
+   }*/
+   
+   public Course(int id, String name, String semester, float credit, float fee, boolean status) {
+      this.id = id;
+      this.name = name;
+      this.semester = semester;
+      this.credit = credit;
+      this.fee = fee;
+      this.status = status;
    }
    
    @Override
    public String toString() {
-      return this.getClass().getSimpleName() + this.id + ", " + this.name + ", " + this.semester + ", " + this.credit + ", " + this.fee + ", " + this.instructor;
+      return this.getClass().getSimpleName() + this.id + ", " + this.name + ", " + this.semester + ", " + this.credit + ", " + this.fee + ", " + this.status;
    }
    
    public int getId() {
