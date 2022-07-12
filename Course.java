@@ -1,16 +1,13 @@
 package model;
 
-public class Course {
-   private int id;
-   private String name;
+public class Course extends Record {
    private String semester;
    private float credit;
    private float fee;
    private int instructor;
-   private boolean status;
    
    public Course() {
-   
+      super();
    }
    
    /*public Course(int id, String name, String semester, float credit, float fee, int instructor) {
@@ -23,25 +20,15 @@ public class Course {
    }*/
    
    public Course(int id, String name, String semester, float credit, float fee, boolean status) {
-      this.id = id;
-      this.name = name;
+      super(id, name, status);
       this.semester = semester;
       this.credit = credit;
       this.fee = fee;
-      this.status = status;
    }
    
    @Override
    public String toString() {
-      return this.getClass().getSimpleName() + this.id + ", " + this.name + ", " + this.semester + ", " + this.credit + ", " + this.fee + ", " + this.status;
-   }
-   
-   public int getId() {
-      return this.id;
-   }
-   
-   public String getName() {
-      return this.name;
+      return super.toString() + ", " + this.semester + ", " + this.credit + ", " + this.fee;
    }
    
    public String getSemester() {
@@ -59,15 +46,7 @@ public class Course {
    public int getInstructor() {
       return this.instructor;
    }
-   
-   public void setId(int id) {
-      this.id = id;
-   }
-   
-   public void setName(String name) {
-      this.name = name;
-   }
-   
+      
    public void setSemester(String semester) {
       this.semester = semester;
    }
